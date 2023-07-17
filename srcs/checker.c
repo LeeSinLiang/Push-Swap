@@ -6,7 +6,7 @@
 /*   By: sinlee <sinlee@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 11:28:28 by codespace         #+#    #+#             */
-/*   Updated: 2023/07/17 11:47:36 by sinlee           ###   ########.fr       */
+/*   Updated: 2023/07/17 14:49:19 by sinlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,13 @@ int	main(int argc, char **argv)
 	i = 0;
 	stack_a = NULL;
 	stack_b = NULL;
+	if (argc == 2)
+		argv = ft_split(argv[1], ' ');
+	if (argc == 2)
+		i = -1;
 	if (argc > 1)
 	{
-		while (++i < argc)
+		while (argv[++i])
 		{
 			if (is_valid(stack_a, argv[i]) == false)
 				ft_error(stack_a);

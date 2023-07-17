@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sinlee <sinlee@student.42kl.edu.my>        +#+  +:+       +#+         #
+#    By: sinlee <sinlee@student42.fr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/16 04:12:09 by sinlee            #+#    #+#              #
-#    Updated: 2023/07/16 04:12:10 by sinlee           ###   ########.fr        #
+#    Updated: 2023/07/17 14:16:20 by sinlee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ LIBC	= ar rcs
 LIBR	= ranlib
 CC		= gcc
 RM		= rm -f
-CFLAGS	= -std=c11 -Wall -Wextra -Werror -I$(INCS)
+CFLAGS	= -Wall -Wextra -Werror -I$(INCS)
 
 
 all: ${NAME}

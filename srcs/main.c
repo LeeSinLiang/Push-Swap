@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinlee <sinlee@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: sinlee <sinlee@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 03:07:36 by sinlee            #+#    #+#             */
-/*   Updated: 2023/07/16 04:11:19 by sinlee           ###   ########.fr       */
+/*   Updated: 2023/07/17 14:36:58 by sinlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,19 @@ int	main(int argc, char **argv)
 	i = 0;
 	stack_a = NULL;
 	stack_b = NULL;
+	if (argc == 2)
+		argv = ft_split(argv[1], ' ');
+	if (argc == 2)
+		i = -1;
 	if (argc > 1)
 	{
-		while (++i < argc)
+		while (argv[++i])
 		{
 			if (is_valid(stack_a, argv[i]) == false)
 				ft_error(stack_a);
 			stack_a = add_node(stack_a, ft_atoi(argv[i]));
 		}
-		push_swap(stack_a, stack_b, argc - 1);
+		push_swap(stack_a, stack_b, stack_len(stack_a));
 		clear_lst_node(stack_a);
 		clear_lst_node(stack_b);
 	}

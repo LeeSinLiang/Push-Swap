@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sinlee <sinlee@student.42kl.edu.my>        +#+  +:+       +#+         #
+#    By: sinlee <sinlee@student42.fr>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/16 04:09:49 by codespace         #+#    #+#              #
-#    Updated: 2023/07/16 08:34:50 by sinlee           ###   ########.fr        #
+#    Updated: 2023/07/17 14:37:20 by sinlee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 CC = gcc
 RM = rm -f
 INCLUDE = -Iincludes -Ilib/ft_printf/includes -Ilib/libft/includes
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -ggdb -fsanitize=address
 
 # Source files
 ALGO_DIR = algorithm
