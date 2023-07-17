@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinlee <sinlee@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: sinlee <sinlee@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 11:43:18 by codespace         #+#    #+#             */
-/*   Updated: 2023/07/16 04:11:45 by sinlee           ###   ########.fr       */
+/*   Updated: 2023/07/17 10:09:26 by sinlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,22 @@ char	*extract_and_ret(char *str, int mode, char *remain_str)
 	int		index;
 	char	*extract;
 
-	index = gnl_ft_strchr(str, '\n');
+	index = gnl_strchr(str, '\n');
 	if (index != -1 && index != BUFFER_SIZE - 1)
 	{
 		if (mode == 1 || mode == 2)
 		{
-			extract = ft_substr(str, index + 1, ft_strlen(str) + 1);
-			if (remain_str != NULL && ft_strlen(remain_str) > 0 && mode == 1)
-				extract = ft_strjoin(remain_str, extract);
+			extract = gnl_substr(str, index + 1, gnl_strlen(str) + 1);
+			if (remain_str != NULL && gnl_strlen(remain_str) > 0 && mode == 1)
+				extract = gnl_strjoin(remain_str, extract);
 			free(remain_str);
 			return (extract);
 		}
 		else
-			return (ft_substr(str, 0, index + 1));
+			return (gnl_substr(str, 0, index + 1));
 	}
-	else if (ft_strlen(str) > 0 && mode == 0)
-		return (ft_substr(str, 0, ft_strlen(str) + 1));
+	else if (gnl_strlen(str) > 0 && mode == 0)
+		return (gnl_substr(str, 0, gnl_strlen(str) + 1));
 	else
 	{
 		if (mode == 2)
@@ -55,13 +55,14 @@ char	*get_next_line(int fd)
 	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	buff_all = extract_and_ret(remain[fd], 0, remain[fd]);
 	remain[fd] = extract_and_ret(remain[fd], 2, remain[fd]);
-	while (gnl_ft_strchr(buff_all, '\n') == -1 && read_size != 0)
+	while (gnl_strchr(buff_all, '\n') == -1 && read_size != 0)
 	{
 		read_size = read(fd, buffer, BUFFER_SIZE);
 		if (read_size <= 0)
 			break ;
 		buffer[read_size] = '\0';
-		buff_all = ft_strjoin(buff_all, extract_and_ret(buffer, 0, remain[fd]));
+		buff_all = gnl_strjoin(buff_all, extract_and_ret(buffer, 0,
+					remain[fd]));
 		remain[fd] = extract_and_ret(buffer, 1, remain[fd]);
 	}
 	free(buffer);

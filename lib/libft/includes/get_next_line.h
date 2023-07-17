@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinlee <sinlee@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: sinlee <sinlee@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:53:31 by sinlee            #+#    #+#             */
-/*   Updated: 2023/07/16 04:11:51 by sinlee           ###   ########.fr       */
+/*   Updated: 2023/07/17 10:25:19 by sinlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,11 @@
 #  define BUFFER_SIZE 5
 # endif
 
-size_t				ft_strlen(const char *str);
-char				*ft_substr(char *s, unsigned int start, size_t len);
-size_t				ft_strlcpy(char *dest, const char *src, size_t size);
-int					gnl_ft_strchr(char *s, char c);
-int					ft_find_newline_pos(char *str);
+size_t				gnl_strlen(const char *str);
+char				*gnl_substr(char *s, unsigned int start, size_t len);
+size_t				gnl_strlcpy(char *dest, const char *src, size_t size);
+int					gnl_strchr(char *s, char c);
 char				*get_next_line(int fd);
-void				print_debug(char *str);
-char				*ft_strjoin(char *s1, char *s2);
+char				*gnl_strjoin(char *s1, char *s2);
 
 #endif
