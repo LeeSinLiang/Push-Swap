@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinlee <sinlee@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: sinlee <sinlee@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 03:27:49 by sinlee            #+#    #+#             */
-/*   Updated: 2023/07/16 04:11:04 by sinlee           ###   ########.fr       */
+/*   Updated: 2023/07/17 11:18:47 by sinlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ bool	swap(t_node **stack)
 
 	*stack = last_first_node(*stack, false);
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		return (false);
+		return (true);
 	tmp = (*stack)->next;
 	(*stack)->next = tmp->next;
 	if (tmp->next != NULL)
@@ -36,7 +36,7 @@ bool	push(t_node **stack_from, t_node **stack_to)
 	t_node	*tmp;
 
 	if (stack_from == NULL || *stack_from == NULL)
-		return (false);
+		return (true);
 	*stack_from = last_first_node(*stack_from, false);
 	*stack_to = last_first_node(*stack_to, false);
 	tmp = (*stack_from)->next;
@@ -56,7 +56,7 @@ bool	rotate(t_node **stack, bool reverse)
 
 	*stack = last_first_node(*stack, false);
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		return (false);
+		return (true);
 	tmp = *stack;
 	if (!reverse)
 	{
