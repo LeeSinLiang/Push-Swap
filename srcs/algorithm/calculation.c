@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calculation.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinlee <sinlee@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: sinlee <sinlee@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 02:07:07 by codespace         #+#    #+#             */
-/*   Updated: 2023/07/16 04:11:14 by sinlee           ###   ########.fr       */
+/*   Updated: 2023/07/17 09:43:44 by sinlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int	execute_calc(t_node *stack_a, t_node *stack_b, int len, bool return_pos_b)
 		if (return_pos_b == true)
 			nmoves = pos[1];
 		else
-			nmoves = (lcm(pos, stack_len(stack_a), stack_len(stack_b), false) 
+			nmoves = (lcm(pos, stack_len(stack_a), stack_len(stack_b), false)
 					+ 1);
 	}
 	else
