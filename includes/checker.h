@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinlee <sinlee@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: sinlee <sinlee@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 11:31:24 by codespace         #+#    #+#             */
-/*   Updated: 2023/07/16 04:11:28 by sinlee           ###   ########.fr       */
+/*   Updated: 2023/07/17 11:44:46 by sinlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ bool				execute(t_node **stack_a, t_node **stack_b, char *line,
 						bool s_print);
 void				print_stack(t_node *stack, char *str, bool advanced,
 						bool to_first);
+int					stack_len(t_node *stack);
 t_node				*add_node(t_node *node, int content);
 void				clear_lst_node(t_node *node);
 void				ft_error(t_node *stack_a);

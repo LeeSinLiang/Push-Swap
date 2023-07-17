@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: sinlee <sinlee@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 14:33:27 by codespace         #+#    #+#             */
-/*   Updated: 2023/07/16 03:46:26 by codespace        ###   ########.fr       */
+/*   Updated: 2023/07/17 11:47:24 by sinlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,20 @@ void	ft_error(t_node *stack_a)
 	exit(EXIT_FAILURE);
 }
 
+static bool	is_space(char c)
+{
+	char	*str;
+
+	str = "\t\n\v\f\r ";
+	while (*str)
+	{
+		if (*str == c)
+			return (true);
+		str++;
+	}
+	return (false);
+}
+
 int	ft_atoi_ps(char *str, t_node *stack_a)
 {
 	long long int	ans;
@@ -26,21 +40,19 @@ int	ft_atoi_ps(char *str, t_node *stack_a)
 
 	ans = 0;
 	result = 1;
-	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
-		|| *str == '\v' || *str == '\r')
+	while (is_space(*str))
 		str++;
+	if (*str == '-')
+		result *= -1;
 	if (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			result *= -1;
 		str++;
-	}
+	if (!*str)
+		ft_error(stack_a);
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
 			ft_error(stack_a);
-		ans *= 10;
-		ans += *str - 48;
+		ans = (ans * 10) + (*str - 48);
 		str++;
 	}
 	if ((result * ans) > 2147483647 || (result * ans) < -2147483648)

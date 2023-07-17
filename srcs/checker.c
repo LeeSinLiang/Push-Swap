@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinlee <sinlee@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*   By: sinlee <sinlee@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 11:28:28 by codespace         #+#    #+#             */
-/*   Updated: 2023/07/16 04:11:18 by sinlee           ###   ########.fr       */
+/*   Updated: 2023/07/17 11:47:36 by sinlee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,11 @@ int	main(int argc, char **argv)
 		while (++i < argc)
 		{
 			if (is_valid(stack_a, argv[i]) == false)
-			{
-				ft_printf("Triggered\n");
 				ft_error(stack_a);
-			}
 			stack_a = add_node(stack_a, ft_atoi(argv[i]));
 		}
+		if (stack_len(stack_a) == 0)
+			ft_error(stack_a);
 		checker(&stack_a, &stack_b);
 		clear_lst_node(stack_a);
 		clear_lst_node(stack_b);
