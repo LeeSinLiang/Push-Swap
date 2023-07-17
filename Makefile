@@ -64,13 +64,13 @@ ${NAME}: ${OBJ_1} ${OBJ_2} $(LIBFT) $(PRINTF)
 	@echo "$(BOLD)$(LIGHT_BLUE)Linking objects...$(RESET)"
 	@$(CC) $(CFLAGS) $(INCLUDES) ${OBJ_1} ${OBJ_2} $(LIBS) -o $(NAME)
 	@echo "$(BOLD)$(LIGHT_BLUE)$(NAME) created successfully!$(RESET)"
-	@echo "$(BOLD)Copyright Reserved. Lee Sin Liang."
+	@echo "$(BOLD)Copyright Reserved. Lee Sin Liang.$(RESET)"
 
 ${BONUS}: ${OBJ_2} ${BONUS_OBJ} $(LIBFT) $(PRINTF)
 	@echo "$(BOLD)$(LIGHT_BLUE)Linking objects...$(RESET)"
 	@${CC} ${CFLAGS} ${BONUS_OBJ} ${OBJ_2} $(LIBS) -o ${BONUS} ${INCLUDE}
 	@echo "$(BOLD)$(LIGHT_BLUE)$(NAME) created successfully!$(RESET)"
-	@echo "$(BOLD)Copyright Reserved. Lee Sin Liang."
+	@echo "$(BOLD)Copyright Reserved. Lee Sin Liang.$(RESET)"
 
 $(LIBFT):
 	@echo "$(BOLD)$(LIGHT_BLUE)Building libft...$(RESET)"
