@@ -15,7 +15,7 @@ NAME = push_swap
 CC = gcc
 RM = rm -f
 INCLUDE = -Iincludes -Ilib/ft_printf/includes -Ilib/libft/includes
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
 # Source files
 ALGO_DIR = algorithm
