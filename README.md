@@ -8,7 +8,7 @@
 	<br/>
   	A journey to sort arrays efficiently.
 </p>
-
+**Disclaimer: This implementation is purely for personal entertainment, by no means it's suitable for production use cases.**
 ## Description
 - Push Swap is a sorting algorithm implemented in C. It efficiently sorts a stack of integers using a series of predefined operations.
 - The algorithm aims to minimize the number of operations required to sort the stack, achieving an efficient sorting process.
